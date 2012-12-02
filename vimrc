@@ -41,6 +41,11 @@ Bundle 'vim-scripts/greplace.vim'
 Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'wincent/Command-T'
+Bundle 'vim-scripts/closetag.vim'
+Bundle 'fholgado/minibufexpl.vim'
+Bundle 'ap/vim-css-color'
 
 filetype plugin indent on
 
@@ -119,58 +124,61 @@ command! -nargs=+ Cuc :!ack --no-heading --no-break <q-args> | cut -d':' -f1,2 |
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+" Disable up/down arrow keys
+noremap <up> <nop>
+noremap <down> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+vnoremap <up> <nop>
+vnoremap <down> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+
+" Switch windows
+nnoremap <C-W>h <A><Left>
+nnoremap <C-W>j <A><Down>
+nnoremap <C-W>k <A><Up>
+nnoremap <C-W>l <A><Right>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
-" Markdown files end in .md
-au BufRead,BufNewFile *.md set filetype=markdown
 
-" rspec mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
+""""""""""""""""""""""""""
+" CONFIG PLUGINS
+"
 
-function! RunCurrentSpecFile()
-  if InSpecFile()
-    let l:command = "s " . @% . " -f documentation"
-    call SetLastSpecCommand(l:command)
-    call RunSpecs(l:command)
-  endif
-endfunction
+" NERDtree on <leader>t
+"nnoremap <leader>t :NERDTreeToggle <CR>
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
+nnoremap <leader>t :NERDTreeToggle \| :silent NERDTreeMirror <CR>
+nnoremap <silent> <leader>tw :NERDTree /Users/quangquach/Projects <CR>
+map <F8> :NERDTreeToggle \| :silent NERDTreeMirror<CR>
 
-function! RunNearestSpec()
-  if InSpecFile()
-    let l:command = "s " . @% . " -l " . line(".") . " -f documentation"
-    call SetLastSpecCommand(l:command)
-    call RunSpecs(l:command)
-  endif
-endfunction
+" Load Powerline
+let g:Powerline_symbols = 'fancy'
 
-function! RunLastSpec()
-  if exists("t:last_spec_command")
-    call RunSpecs(t:last_spec_command)
-  endif
-endfunction
+" Command-T
+noremap <leader>o <Esc>:CommandT<CR>
+noremap <leader>O <Esc>:CommandTFlush<CR>
+noremap <leader>m <Esc>:CommandTBuffer<CR>
 
-function! InSpecFile()
-  return match(expand("%"), "_spec.rb$") != -1
-endfunction
+" Sparkup
+let g:sparkupNextMapping='<c-l>'
 
-function! SetLastSpecCommand(command)
-  let t:last_spec_command = a:command
-endfunction
+" clostag.vim
+let g:closetag_default_xml=1
 
-function! RunSpecs(command)
-  execute ":w\|!clear && echo " . a:command . " && echo && " . a:command
-endfunction
+" miniBufExplorer
+let g:miniBufExplMapWindowNavVim = 1 
+let g:miniBufExplMapWindowNavArrows = 1 
+let g:miniBufExplMapCTabSwitchBufs = 1 
+let g:miniBufExplModSelTarget = 1 
 
 
+"""""""""""""""""""""""""""
+" CODE SYNTAX HIGHTLIGHTING
+"
 " python support
 " --------------
 " don't highlight exceptions and builtins. I love to override them in local
@@ -233,7 +241,8 @@ autocmd BufNewFile,BufRead *.py_tmpl setlocal ft=python
 autocmd BufNewFile,BufRead *.html,*.htm call s:SelectHTML()
 let html_no_rendering=1
 
-let g:closetag_default_xml=1
+autocmd FileType html,htmldjango,htmljinja,eruby,mako,xml,xhtml let b:closetag_html_style=1
+
 
 " GLSL
 " ----
@@ -309,3 +318,7 @@ autocmd FileType lua setlocal shiftwidth=2 tabstop=2 softtabstop=2
 " rust
 " ----
 autocmd FileType rust setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
+
+" Markdown files end in .md
+" -------------------------
+au BufRead,BufNewFile *.md set filetype=markdown
