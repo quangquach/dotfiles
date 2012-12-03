@@ -46,6 +46,8 @@ Bundle 'wincent/Command-T'
 Bundle 'vim-scripts/closetag.vim'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'ap/vim-css-color'
+Bundle 'kleingeist/django.vim'
+Bundle 'ocim/htmljinja.vim'
 
 filetype plugin indent on
 
