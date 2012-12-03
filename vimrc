@@ -35,19 +35,25 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/greplace.vim'
 Bundle 'vim-scripts/tComment'
+Bundle 'vim-scripts/closetag.vim'
 Bundle 'xenoterracide/html.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'wincent/Command-T'
-Bundle 'vim-scripts/closetag.vim'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'ap/vim-css-color'
 Bundle 'kleingeist/django.vim'
 Bundle 'ocim/htmljinja.vim'
+Bundle 'quangquach/Color-Sampler-Pack'
+Bundle 'pangloss/vim-javascript'
+Bundle 'sjl/gundo.vim'
+Bundle 'gregsexton/gitv'
+Bundle 'majutsushi/tagbar'
 
 filetype plugin indent on
 
@@ -145,6 +151,35 @@ nnoremap <C-W>l <A><Right>
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
+" <F1> and <F2> for save in all three modes
+noremap <F2> <Esc>:w<CR>
+inoremap <F2> <Esc>:w<CR>
+nnoremap <F2> <Esc>:w<CR>
+vnoremap <F2> <Esc>:w<CR>
+
+noremap  <F1> <Esc>:w<CR>
+inoremap <F1> <Esc>:w<CR>
+nnoremap <F1> <Esc>:w<CR>
+vnoremap <F1> <Esc>:w<CR>
+
+" <leader>dd to delete buffer
+noremap <leader>bd <Esc>:bd<CR>
+vnoremap <leader>bd <Esc>:bd<CR>
+
+" Toggle pate with <F3>
+set pastetoggle=<F3>
+
+" Left/Right arrow keys change buffers in all modes
+noremap <Left> <Esc>:bp<CR>
+inoremap <Left> <Esc>:bp<CR>
+nnoremap <Left> <Esc>:bp<CR>
+vnoremap <Left> <Esc>:bp<CR>
+
+noremap <Right> <Esc>:bn<CR>
+inoremap <Right> <Esc>:bn<CR>
+nnoremap <Right> <Esc>:bn<CR>
+vnoremap <Right> <Esc>:bn<CR>
+
 
 """"""""""""""""""""""""""
 " CONFIG PLUGINS
@@ -177,6 +212,14 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
+" gundo
+noremap <F5> :GundoToggle<CR>
+inoremap <F5> :GundoToggle<CR>
+nnoremap <F5> :GundoToggle<CR>
+vnoremap <F5> :GundoToggle<CR>
+
+" tagbar
+nmap <leader>l :TagbarToggle<CR>
 
 """""""""""""""""""""""""""
 " CODE SYNTAX HIGHTLIGHTING
