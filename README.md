@@ -84,15 +84,28 @@ Each time you want to include thoughtbot's changes:
 Addition (Quang Quach customs)
 --------
 
-Install zsh-syntax-highlighting
+### zsh-syntax-highlighting
+* Clone the code
+```
+mkdir -p oh-my-zsh/custom/plugins
+cd oh-my-zsh/custom/plugins
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+```
 
-Compile Command-T
+* Edit `zshrc`, in **last** position
+````
+plugins=([plugins...] zsh-syntax-highlighting)
+````
+* Source `~/.zshrc`
+     source ~/.zshrc
+
+### Command-T
 
 ```
 rvm use system
 cd ~/.vim/bundle/Command-T/ruby/command-t
-$ruby extconf.rb
-$make
+ruby extconf.rb
+make
 ```
 
 Credits
