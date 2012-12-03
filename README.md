@@ -81,6 +81,20 @@ Each time you want to include thoughtbot's changes:
     git checkout master
     git rebase upstream
 
+Addition (Quang Quach customs)
+--------
+
+Install zsh-syntax-highlighting
+
+Compile Command-T
+
+```
+rvm use system
+cd ~/.vim/bundle/Command-T/ruby/command-t
+$ruby extconf.rb
+$make
+```
+
 Credits
 -------
 
