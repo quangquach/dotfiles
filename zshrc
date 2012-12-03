@@ -7,9 +7,19 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-plugins=(git rails heroku rvm python ruby brew pip virtualenvwrapper zsh-syntax-highlighting)
+plugins=(git rails heroku rvm python ruby brew pip django zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+
+# Source pip and virtualenvwrapper
+export PYTHONPATH=usr/local/Cellar/python/2.7.3/Frameworks/Python.framework/Versions/2.7/bin
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/share/python/virtualenv
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+source /usr/local/share/python/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/.virtualenvs
+# Customize to your needs...
+export PATH=/Library/PostgreSQL/9.2/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:usr/X11/bin:/Users/quangquach/.rvm/bin:/Users/quangquach/android-sdk/platform-tools:$PYTHONPATH
+alias gitk='gitk 2>/dev/null'
 
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
@@ -76,6 +86,9 @@ setopt CORRECT CORRECT_ALL
 
 # Enable extended globbing
 setopt EXTENDED_GLOB
+
+export LANG=en_US.UTF-8
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 #RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
