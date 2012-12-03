@@ -154,7 +154,7 @@ let g:html_indent_tags = 'li\|p'
 "nnoremap <leader>t :NERDTreeToggle <CR>
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
 nnoremap <leader>t :NERDTreeToggle \| :silent NERDTreeMirror <CR>
-nnoremap <silent> <leader>tw :NERDTree /Users/quangquach/Projects <CR>
+nnoremap <silent> <leader>tw :NERDTree $HOME/Projects <CR>
 map <F8> :NERDTreeToggle \| :silent NERDTreeMirror<CR>
 
 " Load Powerline
