@@ -56,6 +56,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'gregsexton/gitv'
 Bundle 'majutsushi/tagbar'
 Bundle 'othree/html5.vim'
+Bundle 'mileszs/ack.vim'
 
 filetype plugin indent on
 
