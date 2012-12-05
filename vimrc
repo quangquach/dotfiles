@@ -183,6 +183,14 @@ nnoremap <Right> <Esc>:bn<CR>
 vnoremap <Right> <Esc>:bn<CR>
 
 
+" Disable the blinking cursor.
+set gcr=a:blinkon0
+
+" Highlight current line
+au WinEnter * set cursorline
+hi CursorLine cterm=None ctermbg=darkblue guibg=darkblue
+set cursorline
+
 """"""""""""""""""""""""""
 " CONFIG PLUGINS
 "
