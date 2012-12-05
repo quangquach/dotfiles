@@ -57,6 +57,7 @@ Bundle 'gregsexton/gitv'
 Bundle 'majutsushi/tagbar'
 Bundle 'othree/html5.vim'
 Bundle 'mileszs/ack.vim'
+Bundle 'tristen/vim-sparkup'
 
 filetype plugin indent on
 
@@ -192,9 +193,9 @@ au WinEnter * set cursorline
 hi CursorLine cterm=None ctermbg=darkblue guibg=darkblue
 set cursorline
 
-""""""""""""""""""""""""""
+" --------------
 " CONFIG PLUGINS
-"
+" --------------
 
 " NERDtree on <leader>t
 "nnoremap <leader>t :NERDTreeToggle <CR>
@@ -204,37 +205,52 @@ nnoremap <silent> <leader>tw :NERDTree $HOME/Projects <CR>
 map <F8> :NERDTreeToggle \| :silent NERDTreeMirror<CR>
 
 " Load Powerline
+" --------------
 let g:Powerline_symbols = 'fancy'
 
 " Command-T
+" --------
 noremap <leader>o <Esc>:CommandT<CR>
 noremap <leader>O <Esc>:CommandTFlush<CR>
 noremap <leader>m <Esc>:CommandTBuffer<CR>
 
 " Sparkup
-let g:sparkupNextMapping='<c-l>'
+" -------
+let g:sparkupNextMapping='<c-k>'
+augroup sparkup_types
+" Remove ALL autocommands of the current group.
+  autocmd!
+" Add sparkup to new filetypes
+  autocmd FileType mustache,php,htmldjango,htmljinja runtime! ftplugin/html/sparkup.vim
+augroup END
+
 
 " clostag.vim
+" ----------
 let g:closetag_default_xml=1
 
 " miniBufExplorer
+" --------------
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
 " gundo
+" -----
 noremap <F5> :GundoToggle<CR>
 inoremap <F5> :GundoToggle<CR>
 nnoremap <F5> :GundoToggle<CR>
 vnoremap <F5> :GundoToggle<CR>
 
 " tagbar
+" ------
 nmap <leader>l :TagbarToggle<CR>
 
-"""""""""""""""""""""""""""
-" CODE SYNTAX HIGHTLIGHTING
-"
+" ------------------------
+" CODE SYNTAX HIGHLIGHTING
+" ------------------------
+
 " python support
 " --------------
 " don't highlight exceptions and builtins. I love to override them in local
