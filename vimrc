@@ -58,6 +58,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'othree/html5.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'tristen/vim-sparkup'
+Bundle 'groenewege/vim-less'
 
 filetype plugin indent on
 
@@ -95,7 +96,7 @@ if executable("ack")
 endif
 
 " Color scheme
-colorscheme Wombat256
+colorscheme Wombat256mod
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
@@ -399,3 +400,6 @@ au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.md setlocal spell
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
+" LESS
+" ----
+autocmd BufNewFile,BufRead *.less setf less
