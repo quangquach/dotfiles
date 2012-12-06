@@ -96,7 +96,7 @@ if executable("ack")
 endif
 
 " Color scheme
-colorscheme Wombat256mod
+colorscheme JellyBeans
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
@@ -191,7 +191,7 @@ set gcr=a:blinkon0
 
 " Highlight current line
 au WinEnter * set cursorline
-hi CursorLine cterm=None ctermbg=darkblue guibg=darkblue
+hi CursorLine cterm=None ctermbg=5555E0 guibg=darkblue
 set cursorline
 
 " --------------
@@ -217,7 +217,6 @@ noremap <leader>m <Esc>:CommandTBuffer<CR>
 
 " Sparkup
 " -------
-let g:sparkupNextMapping='<c-k>'
 augroup sparkup_types
 " Remove ALL autocommands of the current group.
   autocmd!
