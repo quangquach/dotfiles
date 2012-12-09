@@ -82,7 +82,7 @@ Each time you want to include thoughtbot's changes:
     git rebase upstream
 
 Addition (Quang Quach customs)
---------
+------------------------------
 
 ### zsh-syntax-highlighting
 * Clone the code
@@ -97,15 +97,20 @@ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
 plugins=([plugins...] zsh-syntax-highlighting)
 ````
 * Source `~/.zshrc`
-     source ~/.zshrc
+
+    source ~/.zshrc
 
 ### Command-T
-
 ```
 rvm use system
 cd ~/.vim/bundle/Command-T/ruby/command-t
 ruby extconf.rb
 make
+```
+
+### flake8
+```
+pip install flake8
 ```
 
 Credits
