@@ -60,12 +60,12 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/greplace.vim'
 Bundle 'vim-scripts/tComment'
 Bundle 'vim-scripts/closetag.vim'
+Bundle 'vim-scripts/indentpython.vim--nianyang'
 Bundle 'xenoterracide/html.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-powerline'
@@ -83,6 +83,7 @@ Bundle 'othree/html5.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'tristen/vim-sparkup'
 Bundle 'groenewege/vim-less'
+Bundle 'nvie/vim-flake8'
 
 filetype plugin indent on
 
@@ -229,8 +230,8 @@ if !exists("my_auto_commands_loaded")
   let g:LargeFile = 1024 * 1024 * 10
   augroup LargeFile
     autocmd BufReadPre * let f=expand("<afile>") | if getfsize(f) > g:LargeFile | set eventignore+=FileType | setlocal noswapfile bufhidden=unload buftype=nowrite undolevels=-1 | else | set eventignore-=FileType | endif
-    augroup END
-  endif
+  augroup END
+endif
 
 
 " --------------
@@ -295,16 +296,16 @@ nmap <leader>l :TagbarToggle<CR>
 " scopes and it sucks ass if it's highlighted then. And for exceptions I
 " don't really want to have different colors for my own exceptions ;-)
 autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8
-\ formatoptions+=croq softtabstop=4 smartindent
+\ formatoptions+=croq softtabstop=4 smartindent colorcolumn=79
 \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 let python_highlight_all=1
 let python_highlight_exceptions=0
 let python_highlight_builtins=0
-autocmd FileType pyrex setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+autocmd FileType pyrex setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with colorcolumn=79
 
 " ruby support
 " ------------
-autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=79
 
 " go support
 " ----------
@@ -397,13 +398,13 @@ autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
 
 " Javascript
 " ----------
-autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=79
 autocmd BufNewFile,BufRead *.json setlocal ft=javascript
 let javascript_enable_domhtmlcss=1
 
 " CoffeeScript
 " ------------
-autocmd FileType coffee setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType coffee setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=79
 
 " D
 " -
