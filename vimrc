@@ -384,9 +384,9 @@ autocmd FileType rst setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType cs setlocal tabstop=8 softtabstop=4 shiftwidth=4 expandtab
 
 " C/Obj-C/C++
-autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-autocmd FileType objc setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab colorcolumn=79
+autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab colorcolumn=79
+autocmd FileType objc setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab colorcolumn=79
 let c_no_curly_error=1
 
 " Octave/Matlab
