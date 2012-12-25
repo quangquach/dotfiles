@@ -84,6 +84,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'tristen/vim-sparkup'
 Bundle 'groenewege/vim-less'
 Bundle 'nvie/vim-flake8'
+Bundle 'hallettj/jslint.vim'
 
 filetype plugin indent on
 
