@@ -113,6 +113,15 @@ make
 pip install flake8
 ```
 
+### Javascript ctags in VIM
+```
+brew install ctags
+git clone --recursive https://github.com/mozilla/doctorjs.git
+cd doctorjs
+make
+make install
+```
+
 Credits
 -------
 
