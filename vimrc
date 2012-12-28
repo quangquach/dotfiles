@@ -85,6 +85,7 @@ Bundle 'tristen/vim-sparkup'
 Bundle 'groenewege/vim-less'
 Bundle 'nvie/vim-flake8'
 Bundle 'hallettj/jslint.vim'
+Bundle 'briancollins/vim-jst'
 
 filetype plugin indent on
 
@@ -267,6 +268,7 @@ augroup END
 " clostag.vim
 " ----------
 let g:closetag_default_xml=1
+let g:closetag_html_style=1
 
 " miniBufExplorer
 " --------------
@@ -285,6 +287,11 @@ vnoremap <F5> :GundoToggle<CR>
 " tagbar
 " ------
 nmap <leader>l :TagbarToggle<CR>
+
+" jslint
+" ------
+let g:JSLintHighlightErrorLine=0
+let g:JSLintToggle=0
 
 
 " ------------------------
