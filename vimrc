@@ -86,6 +86,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'nvie/vim-flake8'
 Bundle 'briancollins/vim-jst'
 Bundle 'beyondwords/vim-jinja2'
+Bundle 'nono/vim-handlebars'
 
 filetype plugin indent on
 
@@ -344,6 +345,10 @@ while n < 50 && n < line("$")
 " check for genshi
     if getline(n) =~ 'xmlns:py\|py:\(match\|for\|if\|def\|strip\|xmlns\)'
       set ft=genshi
+      return
+    endif
+    if getline(n) =~ '{{#\|{{/'
+      set ft=handlebars
       return
     endif
     let n = n + 1
