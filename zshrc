@@ -18,7 +18,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 source /usr/local/share/python/virtualenvwrapper.sh
 export WORKON_HOME=$HOME/.virtualenvs
 # Customize to your needs...
-export PATH=/Library/PostgreSQL/9.2/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:usr/X11/bin:/Users/quangquach/.rvm/bin:/Users/quangquach/android-sdk/platform-tools:$PYTHONPATH
+export PATH=/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:usr/X11/bin:/Users/quangquach/.rvm/bin:/Users/quangquach/android-sdk/platform-tools:/Users/quangquach/qt/Qt5.0.0/5.0.0/clang_64/bin:$PYTHONPATH
 alias gitk='gitk 2>/dev/null'
 
 # load our own completion functions
@@ -69,9 +69,6 @@ setopt histignoredups
 # keep TONS of history
 export HISTSIZE=4096
 
-# look for ey config in project dirs
-export EYRC=./.eyrc
-
 # automatically pushd
 setopt auto_pushd
 export dirstacksize=5
@@ -90,7 +87,9 @@ setopt EXTENDED_GLOB
 export LANG=en_US.UTF-8
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
-#RVM
+# RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export PROJECT_HOME=$HOME/Projects
