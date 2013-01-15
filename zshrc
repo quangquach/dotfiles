@@ -19,6 +19,7 @@ source /usr/local/share/python/virtualenvwrapper.sh
 export WORKON_HOME=$HOME/.virtualenvs
 # Customize to your needs...
 export PATH=/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:usr/X11/bin:/Users/quangquach/.rvm/bin:/Users/quangquach/android-sdk/platform-tools:/Users/quangquach/qt/Qt5.0.0/5.0.0/clang_64/bin:$PYTHONPATH
+
 alias gitk='gitk 2>/dev/null'
 
 # load our own completion functions
