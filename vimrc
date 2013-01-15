@@ -87,6 +87,7 @@ Bundle 'nvie/vim-flake8'
 Bundle 'briancollins/vim-jst'
 Bundle 'beyondwords/vim-jinja2'
 Bundle 'nono/vim-handlebars'
+Bundle 'digitaltoad/vim-jade'
 
 filetype plugin indent on
 
