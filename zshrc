@@ -94,3 +94,16 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export PROJECT_HOME=$HOME/Projects
+
+# Prompt with virtual env and RVM
+#
+# Get the current ruby version in use with RVM:
+if [ -e ~/.rvm/bin/rvm-prompt ]; then
+    RUBY_PROMPT_="%{$fg_bold[blue]%}rvm:(%{$fg[green]%}\$(~/.rvm/bin/rvm-prompt s i v g)%{$fg_bold[blue]%})%{$reset_color%} "
+else
+  if which rbenv &> /dev/null; then
+    RUBY_PROMPT_="%{$fg_bold[blue]%}rbenv:(%{$fg[green]%}\$(rbenv version | sed -e 's/ (set.*$//')%{$fg_bold[blue]%})%{$reset_color%} "
+  fi
+fi
+
+RPROMPT="$RUBY_PROMPT_ %{${fg_bold[white]}%}(env: %{${fg[green]}%}`basename \"$VIRTUAL_ENV\"`%{${fg_bold[white]}%})%{${reset_color}%} $RPROMPT"
