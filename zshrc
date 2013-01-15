@@ -106,4 +106,4 @@ else
   fi
 fi
 
-RPROMPT="$RUBY_PROMPT_ %{${fg_bold[white]}%}(env: %{${fg[green]}%}`basename \"$VIRTUAL_ENV\"`%{${fg_bold[white]}%})%{${reset_color}%} $RPROMPT"
+RPROMPT="$RUBY_PROMPT_ $RPROMPT"
