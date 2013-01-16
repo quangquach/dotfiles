@@ -39,6 +39,33 @@ set foldmethod=indent
 set foldlevel=99
 set foldenable
 
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Makes search act like search in modern browsers
+set incsearch
+
+" Don't redraw while executing macros (good performance config)
+set lazyredraw
+
+" For regular expressions turn magic on
+set magic
+
+" Show matching brackets when text indicator is over them
+set showmatch
+
+" How many tenths of a second to blink when matching brackets
+set mat=2
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
 " -------------------------
 " VUNDLE PACKAGE MANAGEMENT
 " -------------------------
@@ -174,6 +201,10 @@ noremap <Right> <Esc>:bn<CR>
 inoremap <Right> <Esc>:bn<CR>
 nnoremap <Right> <Esc>:bn<CR>
 vnoremap <Right> <Esc>:bn<CR>
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
 
 " ---------
 " UTILITIES
