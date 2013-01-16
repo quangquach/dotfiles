@@ -1,1 +1,6 @@
 !bin
+# ingore log files
+virtualenvs/*.log*
+
+# ignore virtualenvs
+virtualenvs/*/*
