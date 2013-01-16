@@ -11,15 +11,18 @@ plugins=(git rails heroku rvm python ruby brew pip django zsh-syntax-highlightin
 
 source $ZSH/oh-my-zsh.sh
 
+# Customize to your needs...
+export PATH=/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:usr/X11/bin:$HOME/qt/Qt5.0.0/5.0.0/clang_64/bin
+
 # Source pip and virtualenvwrapper
 export PYTHONPATH=usr/local/Cellar/python/2.7.3/Frameworks/Python.framework/Versions/2.7/bin
+export PATH=$PATH:$PYTHONPATH
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/share/python/virtualenv
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-source /usr/local/share/python/virtualenvwrapper.sh
 export WORKON_HOME=$HOME/.virtualenvs
-# Customize to your needs...
-export PATH=/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:usr/X11/bin:/Users/quangquach/.rvm/bin:/Users/quangquach/android-sdk/platform-tools:/Users/quangquach/qt/Qt5.0.0/5.0.0/clang_64/bin:$PYTHONPATH
+source $WORKON_HOME/virtualenvwrapper.sh
 
+# stop showing dummy message
 alias gitk='gitk 2>/dev/null'
 
 # load our own completion functions
@@ -91,12 +94,10 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export PROJECT_HOME=$HOME/Projects
 
-# Prompt with virtual env and RVM
-#
 # Get the current ruby version in use with RVM:
 if [ -e ~/.rvm/bin/rvm-prompt ]; then
     RUBY_PROMPT_="%{$fg_bold[blue]%}rvm:(%{$fg[green]%}\$(~/.rvm/bin/rvm-prompt s i v g)%{$fg_bold[blue]%})%{$reset_color%} "
