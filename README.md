@@ -83,6 +83,14 @@ Each time you want to include thoughtbot's changes:
 
 Addition (Quang Quach customs)
 ------------------------------
+### Cloning code
+
+    git clone git://github.com/quangquach/dotfiles.git
+
+### Install zsh
+
+    chsh -s /bin/zsh
+    git submodule update --init oh-my-zsh
 
 ### zsh-syntax-highlighting
 * Clone the code
