@@ -115,6 +115,7 @@ Bundle 'briancollins/vim-jst'
 Bundle 'beyondwords/vim-jinja2'
 Bundle 'nono/vim-handlebars'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'rodjek/vim-puppet'
 
 filetype plugin indent on
 
@@ -288,6 +289,31 @@ let g:Powerline_symbols = 'fancy'
 noremap <leader>o <Esc>:CommandT<CR>
 noremap <leader>O <Esc>:CommandTFlush<CR>
 noremap <leader>m <Esc>:CommandTBuffer<CR>
+set wildignore+=*.swp,*.bak,*.pyc,*.class,*.jar,*.gif,*.png,*.jpg,*.jpeg
+
+" Define the wildignore from gitignore. Primarily for CommandT
+function! WildignoreFromGitignore()
+    silent call CD_Git_Root()
+    let gitignore = '.gitignore'
+    if filereadable(gitignore)
+        let igstring = ''
+        for oline in readfile(gitignore)
+            let line = substitute(oline, '\s|\n|\r', '', "g")
+            if line =~ '^#' | con | endif
+            if line == '' | con  | endif
+            if line =~ '^!' | con  | endif
+            if line =~ '/$' | let igstring .= "," . line . "*" | con | endif
+            let igstring .= "," . line
+        endfor
+        let execstring = "set wildignore=".substitute(igstring,'^,','',"g")
+        execute execstring
+        echo 'Wildignore defined from gitignore in: '.getcwd()
+    else
+        echo 'Unable to find gitignore'
+    endif
+endfunction
+nnoremap <LEADER>cti :call WildignoreFromGitignore()<cr>
+nnoremap <LEADER>cwi :set wildignore=''<cr>:echo 'Wildignore cleared'<cr>
 
 " Sparkup
 " -------
@@ -488,3 +514,7 @@ au BufRead,BufNewFile *.md setlocal textwidth=80
 " LESS
 " ----
 autocmd BufNewFile,BufRead *.less setf less
+
+" HAML coffee
+" -----------
+au BufRead,BufNewFile *.hamlc set ft=haml
