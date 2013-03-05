@@ -93,6 +93,7 @@ Bundle 'vim-scripts/greplace.vim'
 Bundle 'vim-scripts/tComment'
 Bundle 'vim-scripts/closetag.vim'
 Bundle 'vim-scripts/indentpython.vim--nianyang'
+Bundle 'vim-scripts/HTML-AutoCloseTag.git'
 Bundle 'xenoterracide/html.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-powerline'
@@ -116,7 +117,6 @@ Bundle 'beyondwords/vim-jinja2'
 Bundle 'nono/vim-handlebars'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'rodjek/vim-puppet'
-
 filetype plugin indent on
 
 
@@ -518,3 +518,7 @@ autocmd BufNewFile,BufRead *.less setf less
 " HAML coffee
 " -----------
 au BufRead,BufNewFile *.hamlc set ft=haml
+
+" Makefile
+" --------
+" autocmd FileType make setlocal noexpantab
