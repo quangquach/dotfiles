@@ -108,3 +108,12 @@ else
 fi
 
 RPROMPT="$RUBY_PROMPT_ $RPROMPT"
+
+# AWS IAM tools
+export JAVA_HOME="$(/usr/libexec/java_home)"
+export AWS_IAM_HOME="/usr/local/opt/aws-iam-tools/jars"
+export AWS_CREDENTIAL_FILE=$HOME/.aws-credentials-master
+
+# AWS EC2
+export EC2_AMITOOL_HOME="/usr/local/Library/LinkedKegs/ec2-ami-tools/jars"
+export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
