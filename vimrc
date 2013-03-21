@@ -102,7 +102,6 @@ Bundle 'wincent/Command-T'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'ap/vim-css-color'
 Bundle 'kleingeist/django.vim'
-Bundle 'ocim/htmljinja.vim'
 Bundle 'quangquach/Color-Sampler-Pack'
 Bundle 'pangloss/vim-javascript'
 Bundle 'sjl/gundo.vim'
@@ -117,6 +116,8 @@ Bundle 'briancollins/vim-jst'
 Bundle 'nono/vim-handlebars'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'rodjek/vim-puppet'
+Bundle 'sophacles/vim-bundle-mako.git'
+Bundle 'Glench/Vim-Jinja2-Syntax.git'
 filetype plugin indent on
 
 
@@ -321,7 +322,7 @@ augroup sparkup_types
 " Remove ALL autocommands of the current group.
   autocmd!
 " Add sparkup to new filetypes
-  autocmd FileType mustache,php,htmldjango,htmljinja runtime! ftplugin/html/sparkup.vim
+  autocmd FileType mustache,php,htmldjango,jinja runtime! ftplugin/html/sparkup.vim
 augroup END
 
 " clostag.vim
@@ -392,7 +393,7 @@ let n = 1
 while n < 50 && n < line("$")
 " check for jinja
   if getline(n) =~ '{%\s*\(extends\|block\|macro\|set\|if\|for\|include\|trans\)\>'
-    set ft=htmljinja
+    set ft=jinja
     return
   endif
 " check for mako
@@ -415,15 +416,15 @@ while n < 50 && n < line("$")
   set ft=html
 endfun
 
-autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html,xhtml,xml,htmldjango,jinja,eruby,mako setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd bufnewfile,bufread *.rhtml setlocal ft=eruby
 autocmd BufNewFile,BufRead *.mako setlocal ft=mako
-autocmd BufNewFile,BufRead *.tmpl setlocal ft=htmljinja
+autocmd BufNewFile,BufRead *.tmpl setlocal ft=jinja
 autocmd BufNewFile,BufRead *.py_tmpl setlocal ft=python
 autocmd BufNewFile,BufRead *.html,*.htm call s:SelectHTML()
 let html_no_rendering=1
 
-autocmd FileType html,htmldjango,htmljinja,eruby,mako,xml,xhtml let b:closetag_html_style=1
+autocmd FileType html,htmldjango,jinja,eruby,mako,xml,xhtml let b:closetag_html_style=1
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
