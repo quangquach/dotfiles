@@ -7,7 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-plugins=(git rails heroku rvm python ruby brew pip django zsh-syntax-highlighting)
+plugins=(git git-flow rails heroku rvm python ruby brew pip django zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 

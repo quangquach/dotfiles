@@ -94,6 +94,7 @@ Bundle 'vim-scripts/tComment'
 Bundle 'vim-scripts/closetag.vim'
 Bundle 'vim-scripts/indentpython.vim--nianyang'
 Bundle 'vim-scripts/HTML-AutoCloseTag.git'
+Bundle 'vim-scripts/tagbar-phpctags'
 Bundle 'xenoterracide/html.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-powerline'
@@ -113,7 +114,6 @@ Bundle 'tristen/vim-sparkup'
 Bundle 'groenewege/vim-less'
 Bundle 'nvie/vim-flake8'
 Bundle 'briancollins/vim-jst'
-Bundle 'beyondwords/vim-jinja2'
 Bundle 'nono/vim-handlebars'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'rodjek/vim-puppet'
@@ -519,6 +519,4 @@ autocmd BufNewFile,BufRead *.less setf less
 " -----------
 au BufRead,BufNewFile *.hamlc set ft=haml
 
-" Makefile
-" --------
-" autocmd FileType make setlocal noexpantab
+let g:tagbar_phpctags_bin='~/Projects/phpctags/phpctags'
