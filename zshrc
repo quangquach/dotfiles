@@ -117,3 +117,5 @@ export AWS_CREDENTIAL_FILE=$HOME/.aws-credentials-master
 # AWS EC2
 export EC2_AMITOOL_HOME="/usr/local/Library/LinkedKegs/ec2-ami-tools/jars"
 export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
+
+fpath=(/usr/local/share/zsh-completions $fpath)

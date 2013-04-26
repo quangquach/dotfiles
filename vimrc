@@ -95,6 +95,7 @@ Bundle 'vim-scripts/closetag.vim'
 Bundle 'vim-scripts/indentpython.vim--nianyang'
 Bundle 'vim-scripts/HTML-AutoCloseTag.git'
 Bundle 'vim-scripts/tagbar-phpctags'
+Bundle 'vim-scripts/VimClojure'
 Bundle 'xenoterracide/html.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-powerline'
@@ -118,6 +119,7 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'rodjek/vim-puppet'
 Bundle 'sophacles/vim-bundle-mako.git'
 Bundle 'Glench/Vim-Jinja2-Syntax.git'
+Bundle 'derekwyatt/vim-scala'
 filetype plugin indent on
 
 
@@ -276,7 +278,7 @@ endif
 " --------------
 " NERDtree on <leader>t
 "nnoremap <leader>t :NERDTreeToggle <CR>
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$', '__pycache__$[[dir]]']
 nnoremap <leader>t :NERDTreeToggle \| :silent NERDTreeMirror <CR>
 nnoremap <silent> <leader>tw :NERDTree $HOME/Projects <CR>
 map <F8> :NERDTreeToggle \| :silent NERDTreeMirror<CR>
