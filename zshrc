@@ -119,3 +119,18 @@ export EC2_AMITOOL_HOME="/usr/local/Library/LinkedKegs/ec2-ami-tools/jars"
 export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 
 fpath=(/usr/local/share/zsh-completions $fpath)
+
+# avoid stupid correction
+if [ -f ~/.zsh_nocorrect ]; then
+  while read -r COMMAND; do
+    alias $COMMAND="nocorrect $COMMAND"
+  done < ~/.zsh_nocorrect
+fi
+
+# fun stuff: fortune + cowsay
+function boreme() {
+  COWDIR=/usr/local/share/cows/; COWNUM=$(($RANDOM%$(ls $COWDIR | wc -l))); COWFILE=$(ls $COWDIR | sed -n ''$COWNUM'p'); fortune ~/.quotes | cowsay -f $COWFILE
+}
+
+boreme
+
