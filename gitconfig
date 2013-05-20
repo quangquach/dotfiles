@@ -1,6 +1,6 @@
 [user]
-	name = Quang Quach
-	email = me@quang.be
+  name = Quang Quach
+  email = me@quang.be
 [push]
   default = tracking
 [color]
@@ -16,7 +16,7 @@
   merge-branch = !git checkout master && git merge @{-1} --ff-only
   rebase-origin = !git fetch origin && git rebase origin/master
 [core]
-	excludesfile = /Users/quangquach/.gitignore
+  excludesfile = ~/.gitignore
   autocrlf = input
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
