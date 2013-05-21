@@ -121,6 +121,9 @@ Bundle 'rodjek/vim-puppet'
 Bundle 'sophacles/vim-bundle-mako.git'
 Bundle 'Glench/Vim-Jinja2-Syntax.git'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'Rykka/riv.vim'
+Bundle 'jmcantrell/vim-virtualenv'
+
 filetype plugin indent on
 
 
