@@ -133,3 +133,18 @@ function boreme() {
 }
 
 boreme
+
+# auto select virtualenv when cd into a dir that has .venv
+
+function has_virtualenv() {
+  if [ -e .venv ]; then
+    workon `cat .venv`
+  fi
+}
+function venv_cd {
+  cd "$@" && has_virtualenv
+}
+
+alias cd="venv_cd"
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
