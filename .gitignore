@@ -4,3 +4,5 @@ virtualenvs/*.log*
 
 # ignore virtualenvs
 virtualenvs/*/*
+
+vim/tmp/*/*
