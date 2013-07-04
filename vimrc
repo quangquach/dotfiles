@@ -112,7 +112,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'othree/html5.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'tristen/vim-sparkup'
-Bundle 'groenewege/vim-less'
+Bundle 'groenewege/vim-less.git'
 Bundle 'nvie/vim-flake8'
 Bundle 'briancollins/vim-jst'
 Bundle 'nono/vim-handlebars'
@@ -123,6 +123,8 @@ Bundle 'Glench/Vim-Jinja2-Syntax.git'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'Rykka/riv.vim'
 Bundle 'jmcantrell/vim-virtualenv'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'jnwhiteh/vim-golang'
 
 filetype plugin indent on
 
@@ -176,10 +178,10 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 
 " Switch windows
-nnoremap <C-W>h <A><Left>
-nnoremap <C-W>j <A><Down>
-nnoremap <C-W>k <A><Up>
-nnoremap <C-W>l <A><Right>
+nmap <silent> <C-h> :wincmd h<CR>
+nmap <silent> <C-j> :wincmd j<CR>
+nmap <silent> <C-k> :wincmd k<CR>
+nmap <silent> <C-l> :wincmd l<CR>
 
 " <F1> and <F2> for save in all three modes
 noremap <F2> <Esc>:w<CR>
@@ -359,6 +361,9 @@ nmap <leader>l :TagbarToggle<CR>
 let g:JSLintHighlightErrorLine=0
 let g:JSLintToggle=0
 
+" riv
+let g:riv_default_path='~/.vim/tmp/Riv'
+let g:riv_tmp_path='~/.vim/tmp'
 
 " ------------------------
 " CODE SYNTAX HIGHLIGHTING
@@ -422,6 +427,8 @@ while n < 50 && n < line("$")
   set ft=html
 endfun
 
+autocmd FileType html,htmldjango,jinja,eruby,mako,xml,xhtml let b:closetag_html_style=1
+autocmd FileType html,xhtml,xml,htmldjango,jinja,eruby,mako source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 autocmd FileType html,xhtml,xml,htmldjango,jinja,eruby,mako setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd bufnewfile,bufread *.rhtml setlocal ft=eruby
 autocmd BufNewFile,BufRead *.mako setlocal ft=mako
@@ -430,7 +437,6 @@ autocmd BufNewFile,BufRead *.py_tmpl setlocal ft=python
 autocmd BufNewFile,BufRead *.html,*.htm call s:SelectHTML()
 let html_no_rendering=1
 
-autocmd FileType html,htmldjango,jinja,eruby,mako,xml,xhtml let b:closetag_html_style=1
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
