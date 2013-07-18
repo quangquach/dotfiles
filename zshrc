@@ -13,7 +13,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:usr/X11/bin:$HOME/qt/Qt5.0.0/5.0.0/clang_64/bin:/usr/local/share/npm/bin
-export NODE_PATH=$NODE_PATH:/usr/local/lib/node:/usr/local/share/npm/lib/node_modules
+export NODE_PATH='/usr/local/lib/jsctags:${NODE_PATH}':$NODE_PATH:/usr/local/lib/node:/usr/local/share/npm/lib/node_modules
 
 # Source pip and virtualenvwrapper
 #export PYTHONPATH=usr/local/Cellar/python/2.7.4/Frameworks/Python.framework/Versions/2.7/bin

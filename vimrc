@@ -356,6 +356,7 @@ vnoremap <F5> :GundoToggle<CR>
 " ------
 nmap <leader>l :TagbarToggle<CR>
 
+
 " jslint
 " ------
 let g:JSLintHighlightErrorLine=0
@@ -532,4 +533,50 @@ autocmd BufNewFile,BufRead *.less setf less
 " -----------
 au BufRead,BufNewFile *.hamlc set ft=haml
 
+" Tagbar supports
+" -----------
 let g:tagbar_phpctags_bin='~/Projects/phpctags/phpctags'
+
+
+let g:tagbar_type_javascript = {
+      \ 'ctagsbin' : '/usr/local/bin/jsctags'
+      \ }
+
+let g:tagbar_type_puppet = {
+    \ 'ctagstype': 'puppet',
+    \ 'kinds': [
+        \'c:class',
+        \'s:site',
+        \'n:node',
+        \'d:definition'
+      \]
+    \}
+
+let g:tagbar_type_coffee = {
+    \ 'ctagstype' : 'coffee',
+    \ 'kinds'     : [
+        \ 'c:classes',
+        \ 'm:methods',
+        \ 'f:functions',
+        \ 'v:variables',
+        \ 'f:fields',
+    \ ]
+\ }
+
+" Posix regular expressions for matching interesting items. Since this will 
+" be passed as an environment variable, no whitespace can exist in the options
+" so [:space:] is used instead of normal whitespaces.
+" Adapted from: https://gist.github.com/2901844
+let $CTAGS = substitute(s:ctags_opts, '\v\([nst]\)', '\\', 'g')
+
+" support rspec syntax
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }
