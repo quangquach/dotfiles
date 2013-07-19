@@ -20,6 +20,11 @@ set expandtab
 set smarttab
 set autoindent
 
+"
+set ttyfast " u got a fast terminal
+set ttyscroll=3
+set lazyredraw " to avoid scrolling problems
+
 " Numbers
 set number
 set numberwidth=5
@@ -562,12 +567,6 @@ let g:tagbar_type_coffee = {
         \ 'f:fields',
     \ ]
 \ }
-
-" Posix regular expressions for matching interesting items. Since this will 
-" be passed as an environment variable, no whitespace can exist in the options
-" so [:space:] is used instead of normal whitespaces.
-" Adapted from: https://gist.github.com/2901844
-let $CTAGS = substitute(s:ctags_opts, '\v\([nst]\)', '\\', 'g')
 
 " support rspec syntax
 let g:tagbar_type_ruby = {
