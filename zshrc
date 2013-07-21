@@ -136,7 +136,7 @@ function boreme() {
 boreme
 
 # auto select virtualenv when cd into a dir that has .venv
-
+#TODO: avoid re-load current enviroment
 function has_virtualenv() {
   if [ -e .venv ]; then
     workon `cat .venv`
