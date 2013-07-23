@@ -136,12 +136,21 @@ function boreme() {
 boreme
 
 # auto select virtualenv when cd into a dir that has .venv
-#TODO: avoid re-load current enviroment
+# avoid re-load current enviroment
 function has_virtualenv() {
   if [ -e .venv ]; then
-    workon `cat .venv`
+    local venv=$(echo `cat .venv`)
+    if [ $VIRTUAL_ENV ]; then
+      local current_venv=$(basename $VIRTUAL_ENV)
+      if [ "$venv" != "$current_venv" ]; then
+        workon $venv
+      fi
+    else
+      workon $venv
+    fi
   fi
 }
+
 function venv_cd {
   cd "$@" && has_virtualenv
 }
