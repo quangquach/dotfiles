@@ -130,6 +130,7 @@ Bundle 'Rykka/riv.vim'
 Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'alfredodeza/konira.vim'
 
 filetype plugin indent on
 
