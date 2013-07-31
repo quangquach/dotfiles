@@ -580,3 +580,12 @@ let g:tagbar_type_ruby = {
         \ 'F:singleton methods'
     \ ]
 \ }
+
+let g:tagbar_type_css = {
+    \ 'ctagstype' : 'Css',
+      \ 'kinds' : [
+        \ 'c:classes',
+        \ 's:selectors',
+        \ 'i:identities'
+      \ ]
+\ }
