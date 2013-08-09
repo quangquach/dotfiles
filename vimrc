@@ -104,7 +104,6 @@ Bundle 'vim-scripts/VimClojure'
 Bundle 'xenoterracide/html.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'wincent/Command-T'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'ap/vim-css-color'
 Bundle 'kleingeist/django.vim'
@@ -299,11 +298,6 @@ map <F8> :NERDTreeToggle \| :silent NERDTreeMirror<CR>
 " --------------
 let g:Powerline_symbols = 'fancy'
 
-" Command-T
-" --------
-noremap <leader>o <Esc>:CommandT<CR>
-noremap <leader>O <Esc>:CommandTFlush<CR>
-noremap <leader>m <Esc>:CommandTBuffer<CR>
 set wildignore+=*.swp,*.bak,*.pyc,*.class,*.jar,*.gif,*.png,*.jpg,*.jpeg
 
 " Define the wildignore from gitignore. Primarily for CommandT
