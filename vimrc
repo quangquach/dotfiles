@@ -130,6 +130,7 @@ Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'alfredodeza/konira.vim'
+Bundle 'kien/ctrlp.vim'
 
 filetype plugin indent on
 
@@ -220,6 +221,12 @@ vnoremap <Right> <Esc>:bn<CR>
 " Fast saving
 nmap <leader>w :w!<cr>
 
+" ignore non-editable file
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.bak,*.tgz,*.gz     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+set wildignore+=*.pyc,*.pyo " Python
+set wildignore+=*.class,*.jar " Java
+set wildignore+=*.gif,*.png,*.jpg,*.jpeg
 
 " ---------
 " UTILITIES
@@ -298,7 +305,6 @@ map <F8> :NERDTreeToggle \| :silent NERDTreeMirror<CR>
 " --------------
 let g:Powerline_symbols = 'fancy'
 
-set wildignore+=*.swp,*.bak,*.pyc,*.class,*.jar,*.gif,*.png,*.jpg,*.jpeg
 
 " Define the wildignore from gitignore. Primarily for CommandT
 function! WildignoreFromGitignore()
@@ -363,8 +369,23 @@ let g:JSLintHighlightErrorLine=0
 let g:JSLintToggle=0
 
 " riv
+" --
 let g:riv_default_path='~/.vim/tmp/Riv'
 let g:riv_tmp_path='~/.vim/tmp'
+
+" ctrlp
+" ----
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+"let g:ctrlp_resue_window = 1 "'NERD'
+let g:ctrlp_reuse_window = 'netrw\|help\|quickfix'
+let g:ctrlp_user_command = 'ag --nogroup --nobreak --noheading --nocolor -g "" %s '
 
 " ------------------------
 " CODE SYNTAX HIGHLIGHTING
