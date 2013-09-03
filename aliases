@@ -50,3 +50,7 @@ alias pm='python manage.py'
 alias pmr='python manage.py runserver'
 alias pms='python manage.py shell'
 alias pmc='python manage.py schemamigration'
+
+# node.js
+# bower
+alias bower="noglob bower"

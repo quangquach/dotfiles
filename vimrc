@@ -131,6 +131,8 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'alfredodeza/konira.vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'elzr/vim-json'
+Bundle 'wavded/vim-stylus'
 
 filetype plugin indent on
 
@@ -505,7 +507,7 @@ autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
 " Javascript
 " ----------
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=79
-autocmd BufNewFile,BufRead *.json setlocal ft=javascript
+autocmd BufNewFile,BufRead *.json setlocal ft=json
 let javascript_enable_domhtmlcss=1
 
 " CoffeeScript

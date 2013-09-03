@@ -20,8 +20,12 @@ export QT_PATH=$HOME/qt/Qt5.0.0/5.0.0/clang_64/bin
 export PYTHON_SHARE_PATH=/usr/local/share/python
 export PATH=/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:usr/X11/bin:$PYTHON_SHARE_PATH:$QT_PATH:$NODE_PATH:$SENCHA_PATH:$PATH
 export PATH="/usr/local/share/npm/bin:$PATH"
+export PATH="node_modules/.bin":$PATH
 
 export ANDROID_HOME=/usr/local/opt/android-sdk
+export ANDROID_SDK_ROOT_LOCAL=/usr/local/opt/android-sdk
+export NDK_ROOT_LOCAL="$HOME/android-ndk-r9"
+
 # Source pip and virtualenvwrapper
 #export PYTHONPATH=usr/local/Cellar/python/2.7.4/Frameworks/Python.framework/Versions/2.7/bin
 #export PATH=$PATH:$PYTHONPATH
@@ -29,6 +33,8 @@ export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/share/python/virtualenv
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 export WORKON_HOME=$HOME/.virtualenvs
 source $WORKON_HOME/virtualenvwrapper.sh
+
+export COCOS2DX_HOME="$HOME/cocos2d-x"
 
 # stop showing dummy message
 alias gitk='gitk 2>/dev/null'
