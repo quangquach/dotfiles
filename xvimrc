@@ -79,16 +79,6 @@ nnoremap ; :
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
-" Disable up/down arrow keys
-noremap <up> <nop>
-noremap <down> <nop>
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-vnoremap <up> <nop>
-vnoremap <down> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-
 " Switch windows
 nmap <silent> <C-h> <C-w>h
 nmap <silent> <C-j> <C-w>j
