@@ -105,11 +105,6 @@ setopt EXTENDED_GLOB
 export LANG=en_US.UTF-8
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 export PROJECT_HOME=$HOME/Projects
 
 # Get the current ruby version in use with RVM:
