@@ -171,3 +171,5 @@ function venv_cd {
 alias cd="venv_cd"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export GOPATH=$HOME/gocode
