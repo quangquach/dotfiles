@@ -171,3 +171,5 @@ export GOPATH=$HOME/Projects/gopath
 export PATH=$PATH:$GOROOT/bin
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export GOPATH=$HOME/gocode
