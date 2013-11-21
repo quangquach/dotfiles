@@ -165,4 +165,9 @@ function venv_cd {
 
 alias cd="venv_cd"
 
+# go go go
+export GOROOT=/usr/local/Cellar/go/1.2rc2
+export GOPATH=$HOME/Projects/gopath
+export PATH=$PATH:$GOROOT/bin
+
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

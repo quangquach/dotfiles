@@ -83,9 +83,6 @@ Bundle 'gmarik/vundle'
 
 " Define bundles via Github repos
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'nanki/treetop.vim'
-Bundle 'timcharper/textile.vim'
-Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
@@ -95,7 +92,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/greplace.vim'
-Bundle 'vim-scripts/tComment'
 Bundle 'vim-scripts/closetag.vim'
 Bundle 'vim-scripts/indentpython.vim--nianyang'
 Bundle 'vim-scripts/HTML-AutoCloseTag.git'
@@ -129,10 +125,10 @@ Bundle 'Rykka/riv.vim'
 Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'jnwhiteh/vim-golang'
-Bundle 'alfredodeza/konira.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'elzr/vim-json'
 Bundle 'wavded/vim-stylus'
+Bundle 'mustache/vim-mode.git'
 
 filetype plugin indent on
 
@@ -144,8 +140,9 @@ filetype plugin indent on
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
+  "set t_Co=256
 endif
-set guifont=Menlo\ Bold:h12
+set guifont=CosmicSansNeueMonoBold:h14
 
 " Color scheme
 colorscheme JellyBeans
@@ -255,7 +252,7 @@ if filereadable(".vimrc.local")
 endif
 
 " Use Ack instead of Grep when available
-if executable("ack")
+if executable("ag")
   set grepprg=ack\ -H\ --nogroup\ --nocolor
 endif
 
