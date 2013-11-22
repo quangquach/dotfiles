@@ -129,6 +129,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'elzr/vim-json'
 Bundle 'wavded/vim-stylus'
 Bundle 'mustache/vim-mode.git'
+Bundle 'octol/vim-cpp-enhanced-highlight'
 
 filetype plugin indent on
 
