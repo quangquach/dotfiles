@@ -111,7 +111,6 @@ Bundle 'gregsexton/gitv'
 Bundle 'majutsushi/tagbar'
 Bundle 'othree/html5.vim'
 Bundle 'mileszs/ack.vim'
-Bundle 'tristen/vim-sparkup'
 Bundle 'groenewege/vim-less.git'
 Bundle 'nvie/vim-flake8'
 Bundle 'briancollins/vim-jst'
@@ -122,7 +121,6 @@ Bundle 'sophacles/vim-bundle-mako.git'
 Bundle 'Glench/Vim-Jinja2-Syntax.git'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'Rykka/riv.vim'
-Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'kien/ctrlp.vim'
@@ -143,7 +141,7 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
   "set t_Co=256
 endif
-set guifont=CosmicSansNeueMonoBold:h14
+set guifont=CosmicSansNeueMono:h14
 
 " Color scheme
 colorscheme JellyBeans
@@ -386,6 +384,10 @@ let g:ctrlp_custom_ignore = {
 "let g:ctrlp_resue_window = 1 "'NERD'
 let g:ctrlp_reuse_window = 'netrw\|help\|quickfix'
 let g:ctrlp_user_command = 'ag --nogroup --nobreak --noheading --nocolor -g "" %s '
+
+" YouCompleteMe
+"
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 
 " ------------------------
 " CODE SYNTAX HIGHLIGHTING

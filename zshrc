@@ -27,9 +27,9 @@ export ANDROID_SDK_ROOT_LOCAL=/usr/local/opt/android-sdk
 export NDK_ROOT_LOCAL="$HOME/android-ndk-r9"
 
 # Source pip and virtualenvwrapper
-#export PYTHONPATH=usr/local/Cellar/python/2.7.4/Frameworks/Python.framework/Versions/2.7/bin
-#export PATH=$PATH:$PYTHONPATH
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/share/python/virtualenv
+export PYTHONPATH=/usr/local/Cellar/python/2.7.6/Frameworks/Python.framework/Versions/2.7/bin
+export PATH=$PATH:$PYTHONPATH
+#export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/share/python/virtualenv
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 export WORKON_HOME=$HOME/.virtualenvs
 source $WORKON_HOME/virtualenvwrapper.sh
@@ -107,6 +107,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 export PROJECT_HOME=$HOME/Projects
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 # Get the current ruby version in use with RVM:
 if [ -e ~/.rvm/bin/rvm-prompt ]; then
     RUBY_PROMPT_="%{$fg_bold[blue]%}rvm:(%{$fg[green]%}\$(~/.rvm/bin/rvm-prompt s i v g)%{$fg_bold[blue]%})%{$reset_color%} "
@@ -166,10 +167,15 @@ function venv_cd {
 alias cd="venv_cd"
 
 # go go go
-export GOROOT=/usr/local/Cellar/go/1.2rc2
-export GOPATH=$HOME/Projects/gopath
+export GOROOT=/usr/local/Cellar/go/1.2
+export GOPATH=$HOME/gocode
 export PATH=$PATH:$GOROOT/bin
+
+export PATH=$PATH:$GOPATH/bin
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export GOPATH=$HOME/gocode
+
+__rvm_project_rvmrc
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
