@@ -128,6 +128,9 @@ Bundle 'elzr/vim-json'
 Bundle 'wavded/vim-stylus'
 Bundle 'mustache/vim-mode.git'
 Bundle 'octol/vim-cpp-enhanced-highlight'
+Bundle 'amix/vim-zenroom'
+Bundle 'kovisoft/slimv'
+Bundle 'amdt/vim-niji'
 
 filetype plugin indent on
 
