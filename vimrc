@@ -99,7 +99,7 @@ Bundle 'vim-scripts/HTML-AutoCloseTag.git'
 Bundle 'vim-scripts/tagbar-phpctags'
 Bundle 'xenoterracide/html.vim'
 Bundle 'scrooloose/nerdtree'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'ap/vim-css-color'
 Bundle 'kleingeist/django.vim'
@@ -162,7 +162,6 @@ set gcr=a:blinkon0
 au WinEnter * set cursorline
 hi CursorLine cterm=None ctermbg=5555E0 guibg=darkblue
 set cursorline
-
 
 " ------------
 " KEY BINDINGS
