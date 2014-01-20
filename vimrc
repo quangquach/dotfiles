@@ -559,6 +559,10 @@ autocmd BufNewFile,BufRead *.less setf less
 " -----------
 au BufRead,BufNewFile *.hamlc set ft=haml
 
+" Hyphen keyword on some format like Lisp, CSS, HTML
+"
+au FileType lisp,clojure,html,xml,xhtml,haml,eruby,css,scss,sass,javascript,coffee setlocal isk+=-
+
 " Tagbar supports
 " -----------
 let g:tagbar_phpctags_bin='~/Projects/phpctags/phpctags'
