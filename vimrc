@@ -489,7 +489,8 @@ autocmd FileType java setlocal shiftwidth=2 tabstop=8 softtabstop=2 expandtab
 " ---
 autocmd BufNewFile,BufRead *.txt setlocal ft=rst
 autocmd FileType rst setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-\ formatoptions+=nqt textwidth=74
+"\ formatoptions+=nqt "textwidth=74
+\ formatoptions+=atw textwidth=74
 
 " C#
 autocmd FileType cs setlocal tabstop=8 softtabstop=4 shiftwidth=4 expandtab
