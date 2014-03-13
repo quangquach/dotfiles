@@ -50,7 +50,7 @@ compinit
 setopt auto_cd
 
 # use vim as an editor
-export EDITOR=vim
+export EDITOR="mvim -v"
 
 # aliases
 if [ -e "$HOME/.aliases" ]; then
