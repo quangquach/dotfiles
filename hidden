@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+if [ "$1" == "on" ]; then
+  echo "Show Hidden Files in Finder"
+  defaults write com.apple.finder AppleShowAllFiles TRUE
+elif [ "$1" == "off" ]; then
+  echo "Hide Hidden Files in Finder"
+  defaults write com.apple.finder AppleShowAllFiles FALSE
+fi
