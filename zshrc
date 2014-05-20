@@ -27,12 +27,12 @@ export ANDROID_SDK_ROOT_LOCAL=/usr/local/opt/android-sdk
 export NDK_ROOT_LOCAL="$HOME/android-ndk-r9"
 
 # Source pip and virtualenvwrapper
-#export PYTHONPATH=/usr/local/Cellar/python/2.7.6/Frameworks/Python.framework/Versions/2.7/bin
+export PYTHONPATH=/usr/local/Cellar/python/2.7.6/Frameworks/Python.framework/Versions/2.7/bin
 #export PATH=$PATH:$PYTHONPATH
 #export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/share/python/virtualenv
 #export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-#export WORKON_HOME=$HOME/.virtualenvs
-#source $WORKON_HOME/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/.virtualenvs
+source $WORKON_HOME/virtualenvwrapper.sh
 
 export COCOS2DX_HOME="$HOME/cocos2d-x"
 
