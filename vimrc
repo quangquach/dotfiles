@@ -393,6 +393,9 @@ let g:ctrlp_user_command = 'ag --nogroup --nobreak --noheading --nocolor -g "" %
 "
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 
+" Jedi
+let g:jedi#use_splits_not_buffers = 'left'
+
 " ------------------------
 " CODE SYNTAX HIGHLIGHTING
 " ------------------------
