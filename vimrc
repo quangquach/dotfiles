@@ -146,7 +146,7 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
   "set t_Co=256
 endif
-set guifont=CosmicSansNeueMono:h14
+set guifont=FantasqueSansMono-Regular:h14
 
 " Color scheme
 colorscheme JellyBeans
