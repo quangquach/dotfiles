@@ -36,6 +36,9 @@ source $WORKON_HOME/virtualenvwrapper.sh
 
 export COCOS2DX_HOME="$HOME/cocos2d-x"
 
+export MOAI_BIN=$HOME/Projects/moai-dev/release/osx/host-sdl/bin
+export MOAI_CONFIG=$HOME/Projects/moai-dev/samples/config
+
 # stop showing dummy message
 alias gitk='gitk 2>/dev/null'
 
