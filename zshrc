@@ -9,6 +9,11 @@ ZSH_THEME="robbyrussell"
 
 plugins=(git git-flow rails heroku rvm python ruby brew pip django zsh-syntax-highlighting)
 
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
@@ -21,23 +26,29 @@ export PYTHON_SHARE_PATH=/usr/local/share/python
 export PATH=/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:usr/X11/bin:$PYTHON_SHARE_PATH:$QT_PATH:$NODE_PATH:$SENCHA_PATH:$PATH
 export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="node_modules/.bin":$PATH
+export PATH="$HOME/.cabal/bin":$PATH
+export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
 
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export ANDROID_SDK_ROOT_LOCAL=/usr/local/opt/android-sdk
 export NDK_ROOT_LOCAL="$HOME/android-ndk-r9"
 
 # Source pip and virtualenvwrapper
-export PYTHONPATH=/usr/local/Cellar/python/2.7.6/Frameworks/Python.framework/Versions/2.7/bin
-#export PATH=$PATH:$PYTHONPATH
+export PYTHONPATH=/usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/bin
+export PATH=$PATH:$PYTHONPATH
 #export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/share/python/virtualenv
 #export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 export WORKON_HOME=$HOME/.virtualenvs
 source $WORKON_HOME/virtualenvwrapper.sh
 
-export COCOS2DX_HOME="$HOME/cocos2d-x"
+export COCOS2DX_HOME="$HOME/Projects/cocos2d-x-3.2/cocos2d-x"
+export COCOS_CONSOLE_ROOT="$HOME/Projects/cocos2d-x-3.2/tools/cocos2d-console/bin"
+export PATH=$COCOS_CONSOLE_ROOT:$PATH
 
 export MOAI_BIN=$HOME/Projects/moai-dev/release/osx/host-sdl/bin
 export MOAI_CONFIG=$HOME/Projects/moai-dev/samples/config
+
+export LUA_PATH=$LUA_PATH:"$HOME/Projects/cocos2d-x-3.2/cocos/scripting/lua-bindings/script"
 
 # stop showing dummy message
 alias gitk='gitk 2>/dev/null'
@@ -181,4 +192,11 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 __rvm_project_rvmrc
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# Google App Engine SDK
+#
+export PATH=/Users/lawrencetaur/google-cloud-sdk/bin:$PATH
+# The next line updates PATH for the Google Cloud SDK.
+source "$HOME/google-cloud-sdk/path.zsh.inc"
+
+# The next line enables bash completion for gcloud.
+#source "$HOME/google-cloud-sdk/completion.zsh.inc"

@@ -19,7 +19,7 @@ setopt prompt_subst
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/Users/quangquach/Projects/cocos2d-x-3.0rc2/tools/cocos2d-console/bin
+export COCOS_CONSOLE_ROOT="$HOME/Projects/cocos2d-x-3.2/tools/cocos2d-console/bin"
 export PATH=$COCOS_CONSOLE_ROOT:$PATH
 
 # Add environment variable NDK_ROOT for cocos2d-x

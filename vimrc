@@ -96,16 +96,14 @@ Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/greplace.vim'
 Bundle 'vim-scripts/closetag.vim'
 Bundle 'vim-scripts/indentpython.vim--nianyang'
-Bundle 'vim-scripts/HTML-AutoCloseTag.git'
+Bundle 'Raimondi/delimitMate'
 Bundle 'vim-scripts/tagbar-phpctags'
-Bundle 'xenoterracide/html.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'bling/vim-airline'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'ap/vim-css-color'
 Bundle 'kleingeist/django.vim'
 Bundle 'quangquach/Color-Sampler-Pack'
-Bundle 'quangquach/octave.vim--'
 Bundle 'pangloss/vim-javascript'
 Bundle 'sjl/gundo.vim'
 Bundle 'gregsexton/gitv'
@@ -115,24 +113,28 @@ Bundle 'mileszs/ack.vim'
 Bundle 'groenewege/vim-less.git'
 Bundle 'nvie/vim-flake8'
 Bundle 'briancollins/vim-jst'
-Bundle 'nono/vim-handlebars'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'rodjek/vim-puppet'
 Bundle 'sophacles/vim-bundle-mako.git'
 Bundle 'Glench/Vim-Jinja2-Syntax.git'
-Bundle 'derekwyatt/vim-scala'
 Bundle 'Rykka/riv.vim'
+Bundle 'Rykka/clickable.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'kien/ctrlp.vim'
 Bundle 'elzr/vim-json'
-Bundle 'wavded/vim-stylus'
-Bundle 'mustache/vim-mode.git'
 Bundle 'octol/vim-cpp-enhanced-highlight'
 Bundle 'junegunn/goyo.vim'
 Bundle 'kovisoft/slimv'
 Bundle 'amdt/vim-niji'
 Bundle 'guns/vim-clojure-static'
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-lua-ftplugin'
+Bundle 'dag/vim2hs'
+Bundle 'vim-scripts/cg.vim--Lebaredian'
+Bundle 'tikhomirov/vim-glsl'
+Bundle 'beyondmarc/hlsl.vim'
+Bundle 'thinca/vim-localrc'
 
 filetype plugin indent on
 
@@ -162,7 +164,8 @@ set gcr=a:blinkon0
 " Highlight current line
 au WinEnter * set cursorline
 hi CursorLine cterm=None ctermbg=5555E0 guibg=darkblue
-set cursorline
+"set cursorline
+set nocursorline
 
 " ------------
 " KEY BINDINGS
@@ -362,7 +365,7 @@ vnoremap <F5> :GundoToggle<CR>
 
 " tagbar
 " ------
-nmap <leader>l :TagbarToggle<CR>
+nmap <leader>' :TagbarToggle<CR>
 
 
 " jslint
@@ -391,10 +394,11 @@ let g:ctrlp_user_command = 'ag --nogroup --nobreak --noheading --nocolor -g "" %
 
 " YouCompleteMe
 "
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
 
 " Jedi
-let g:jedi#use_splits_not_buffers = 'left'
+"let g:jedi#use_splits_not_buffers = 'left'
 
 " ------------------------
 " CODE SYNTAX HIGHLIGHTING
@@ -567,6 +571,15 @@ au BufRead,BufNewFile *.hamlc set ft=haml
 " Hyphen keyword on some format like Lisp, CSS, HTML
 "
 au FileType lisp,clojure,html,xml,xhtml,haml,eruby,css,scss,sass,javascript,coffee setlocal isk+=-
+
+" Lua
+"
+let g:lua_complete_omni = 0
+
+" C/C++
+" ----
+" Switch between h & cpp files in same directory
+map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 
 " Tagbar supports
 " -----------
