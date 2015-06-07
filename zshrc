@@ -41,14 +41,14 @@ export PATH=$PATH:$PYTHONPATH
 export WORKON_HOME=$HOME/.virtualenvs
 source $WORKON_HOME/virtualenvwrapper.sh
 
-export COCOS2DX_HOME="$HOME/Projects/cocos2d-x-3.2/cocos2d-x"
-export COCOS_CONSOLE_ROOT="$HOME/Projects/cocos2d-x-3.2/tools/cocos2d-console/bin"
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
+export COCOS2DX_HOME="$HOME/Projects/cocos2d-x/"
 
-export MOAI_BIN=$HOME/Projects/moai-dev/release/osx/host-sdl/bin
-export MOAI_CONFIG=$HOME/Projects/moai-dev/samples/config
+export LUA_PATH="$HOME/.luarocks/share/lua/5.2/?.lua;$HOME/.luarocks/share/lua/5.2/?/init.lua;/usr/local/share/lua/5.2/?.lua;/usr/local/share/lua/5.2/?/init.lua;/usr/local/Cellar/luarocks/2.2.0_1/share/lua/5.2/?.lua"
+export LUA_PATH=$LUA_PATH:"$HOME/Projects/cocos2d-x/cocos/scripting/lua-bindings/script"
+export LUA_CPATH='$HOME/.luarocks/lib/lua/5.2/?.so;/usr/local/lib/lua/5.2/?.so;/usr/local/lib/lua/5.2/loadall.so;./?.so'
 
-export LUA_PATH=$LUA_PATH:"$HOME/Projects/cocos2d-x-3.2/cocos/scripting/lua-bindings/script"
+export LIBCLANG_LIBRARY="/usr/local/opt/llvm/lib"
+export LIBCLANG_INCLUDE_DIR="/usr/local/opt/llvm/include"
 
 # stop showing dummy message
 alias gitk='gitk 2>/dev/null'
@@ -197,6 +197,9 @@ __rvm_project_rvmrc
 export PATH=/Users/lawrencetaur/google-cloud-sdk/bin:$PATH
 # The next line updates PATH for the Google Cloud SDK.
 source "$HOME/google-cloud-sdk/path.zsh.inc"
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # The next line enables bash completion for gcloud.
 #source "$HOME/google-cloud-sdk/completion.zsh.inc"

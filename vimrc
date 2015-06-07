@@ -71,6 +71,9 @@ set mat=2
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
+" Use new regex engine
+set regexpengine=1
+
 " -------------------------
 " VUNDLE PACKAGE MANAGEMENT
 " -------------------------
@@ -90,7 +93,6 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'tmhedberg/matchit'
-Bundle 'tpope/vim-afterimage'
 Bundle 'tpope/vim-liquid'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/greplace.vim'
@@ -106,10 +108,8 @@ Bundle 'kleingeist/django.vim'
 Bundle 'quangquach/Color-Sampler-Pack'
 Bundle 'pangloss/vim-javascript'
 Bundle 'sjl/gundo.vim'
-Bundle 'gregsexton/gitv'
 Bundle 'majutsushi/tagbar'
 Bundle 'othree/html5.vim'
-Bundle 'mileszs/ack.vim'
 Bundle 'groenewege/vim-less.git'
 Bundle 'nvie/vim-flake8'
 Bundle 'briancollins/vim-jst'
@@ -118,7 +118,7 @@ Bundle 'rodjek/vim-puppet'
 Bundle 'sophacles/vim-bundle-mako.git'
 Bundle 'Glench/Vim-Jinja2-Syntax.git'
 Bundle 'Rykka/riv.vim'
-Bundle 'Rykka/clickable.vim'
+"Bundle 'Rykka/clickable.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'kien/ctrlp.vim'
@@ -126,6 +126,7 @@ Bundle 'elzr/vim-json'
 Bundle 'octol/vim-cpp-enhanced-highlight'
 Bundle 'junegunn/goyo.vim'
 Bundle 'kovisoft/slimv'
+Bundle 'slim-template/vim-slim.git'
 Bundle 'amdt/vim-niji'
 Bundle 'guns/vim-clojure-static'
 Bundle 'xolox/vim-misc'
@@ -135,6 +136,11 @@ Bundle 'vim-scripts/cg.vim--Lebaredian'
 Bundle 'tikhomirov/vim-glsl'
 Bundle 'beyondmarc/hlsl.vim'
 Bundle 'thinca/vim-localrc'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'leafgarland/typescript-vim'
+Bundle 'jason0x43/vim-js-indent'
+Bundle 'eagletmt/neco-ghc'
+Bundle 'rking/ag.vim'
 
 filetype plugin indent on
 
@@ -396,9 +402,11 @@ let g:ctrlp_user_command = 'ag --nogroup --nobreak --noheading --nocolor -g "" %
 "
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
+let g:ycm_semantic_triggers = {'haskell': ['.']}
 
-" Jedi
-"let g:jedi#use_splits_not_buffers = 'left'
+" necohc
+" ------
+setlocal omnifunc=necoghc#omnifunc
 
 " ------------------------
 " CODE SYNTAX HIGHLIGHTING
@@ -567,6 +575,10 @@ autocmd BufNewFile,BufRead *.less setf less
 " HAML coffee
 " -----------
 au BufRead,BufNewFile *.hamlc set ft=haml
+
+" Slim
+" ----
+" autocmd BufNewFile,BufRead *.slim set ft=slim
 
 " Hyphen keyword on some format like Lisp, CSS, HTML
 "
