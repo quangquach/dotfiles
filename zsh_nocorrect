@@ -9,3 +9,5 @@ htop
 tig
 git
 vagrant
+rspec
+spec

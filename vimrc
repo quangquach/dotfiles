@@ -91,6 +91,8 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rvm'
+Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-surround'
 Bundle 'tmhedberg/matchit'
 Bundle 'tpope/vim-liquid'
@@ -127,7 +129,7 @@ Bundle 'octol/vim-cpp-enhanced-highlight'
 Bundle 'junegunn/goyo.vim'
 Bundle 'kovisoft/slimv'
 Bundle 'slim-template/vim-slim.git'
-Bundle 'amdt/vim-niji'
+Bundle 'losingkeys/vim-niji'
 Bundle 'guns/vim-clojure-static'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-lua-ftplugin'
@@ -152,12 +154,14 @@ filetype plugin indent on
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
-  "set t_Co=256
+  set t_Co=256
+  colorscheme JellyBeans
 endif
-set guifont=FantasqueSansMono-Regular:h14
 
+set guifont=FantasqueSansMono-Regular:h14
+"set guifont="Source Code Pro":h15
+"
 " Color scheme
-colorscheme JellyBeans
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
@@ -402,7 +406,9 @@ let g:ctrlp_user_command = 'ag --nogroup --nobreak --noheading --nocolor -g "" %
 "
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
-let g:ycm_semantic_triggers = {'haskell': ['.']}
+let g:ycm_semantic_triggers = {'haskell': ['.'], 'ruby': ['.']}
+"let g:ycm_semantic_triggers = {'haskell': ['.']}
+let g:ycm_collect_identifiers_from_tags_files = 1
 
 " necohc
 " ------
@@ -428,7 +434,9 @@ autocmd FileType pyrex setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 s
 " ruby support
 " ------------
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=79
-
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 " go support
 " ----------
 autocmd BufNewFile,BufRead *.go setlocal ft=go
@@ -595,6 +603,9 @@ map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 
 " Tagbar supports
 " -----------
+set tags+=./tags;
+set tags+=./gems.tags;
+
 let g:tagbar_phpctags_bin='~/Projects/phpctags/phpctags'
 
 

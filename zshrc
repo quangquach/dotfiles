@@ -28,6 +28,7 @@ export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="node_modules/.bin":$PATH
 export PATH="$HOME/.cabal/bin":$PATH
 export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export ANDROID_SDK_ROOT_LOCAL=/usr/local/opt/android-sdk
