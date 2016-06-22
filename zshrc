@@ -26,7 +26,7 @@ export PYTHON_SHARE_PATH=/usr/local/share/python
 export PATH=/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:usr/X11/bin:$PYTHON_SHARE_PATH:$QT_PATH:$NODE_PATH:$SENCHA_PATH:$PATH
 export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="node_modules/.bin":$PATH
-export PATH="$HOME/.cabal/bin":$PATH
+export PATH="$HOME/.cabal/bin":"$HOME/Library/Haskell/bin":$PATH
 export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
@@ -47,6 +47,8 @@ export COCOS2DX_HOME="$HOME/Projects/cocos2d-x/"
 export LUA_PATH="$HOME/.luarocks/share/lua/5.2/?.lua;$HOME/.luarocks/share/lua/5.2/?/init.lua;/usr/local/share/lua/5.2/?.lua;/usr/local/share/lua/5.2/?/init.lua;/usr/local/Cellar/luarocks/2.2.0_1/share/lua/5.2/?.lua"
 export LUA_PATH=$LUA_PATH:"$HOME/Projects/cocos2d-x/cocos/scripting/lua-bindings/script"
 export LUA_CPATH='$HOME/.luarocks/lib/lua/5.2/?.so;/usr/local/lib/lua/5.2/?.so;/usr/local/lib/lua/5.2/loadall.so;./?.so'
+export CARGO_HOME="$HOME/.cargo/bin"
+export PATH=$PATH:$CARGO_HOME
 
 export LIBCLANG_LIBRARY="/usr/local/opt/llvm/lib"
 export LIBCLANG_INCLUDE_DIR="/usr/local/opt/llvm/include"
@@ -195,12 +197,16 @@ __rvm_project_rvmrc
 
 # Google App Engine SDK
 #
-export PATH=/Users/lawrencetaur/google-cloud-sdk/bin:$PATH
+#export PATH=/Users/lawrencetaur/google-cloud-sdk/bin:$PATH
 # The next line updates PATH for the Google Cloud SDK.
-source "$HOME/google-cloud-sdk/path.zsh.inc"
+#source "$HOME/google-cloud-sdk/path.zsh.inc"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # The next line enables bash completion for gcloud.
 #source "$HOME/google-cloud-sdk/completion.zsh.inc"
+
+export PATH=/Applications/Racket\ v6.2/bin/:$PATH
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

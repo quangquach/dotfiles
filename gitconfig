@@ -1,6 +1,7 @@
 [user]
-  name = Quang Quach
-  email = me@quang.be
+	name = Quang Quach
+	email = me@quang.be
+	signingkey = 75D5E5A2
 [push]
   default = tracking
 [color]
@@ -16,7 +17,7 @@
   merge-branch = !git checkout master && git merge @{-1} --ff-only
   rebase-origin = !git fetch origin && git rebase origin/master
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/quangquach/.gitignore
   autocrlf = input
 	editor = mvim
 	editor = vim
@@ -26,3 +27,7 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

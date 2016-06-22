@@ -23,15 +23,26 @@
      emacs-lisp
      html
      ruby
+     ruby-on-rails
      javascript
+     racket
+     lua
      ;; git
      markdown
      dockerfile
+     yaml
      org
+     haskell
+     ycmd
+     purescript
+     typescript
+     rust
+     dash
+     clojure
      (git :variables
           git-magit-status-fullscreen t)
      (shell :variables
-            shell-default-term-shell "/bin/zsh"
+            shell-default-shell 'eshell
             shell-default-height 30
             shell-default-position 'bottom)
      ;; syntax-checking
@@ -178,6 +189,9 @@ before layers configuration."
    web-mode-enable-auto-indentation t
    web-mode-markup-indent-offset 2
    tab-width 2
+   racket-racket-program "/Applications/Racket v6.2/bin/racket"
+   racket-raco-program "/Applications/Racket v6.2/bin/raco"
+   git-magit-status-fullscreen t
    )
   )
 
@@ -188,7 +202,23 @@ layers configuration."
   (global-company-mode)
   ;(add-hook 'css-mode-hook 'rainbow-mode (lambda() (rainbow-mode 1)))
   (add-hook 'css-mode-hook 'rainbow-mode)
+  (setq magit-repository-directories '("~/Projects/"))
+  (setq neo-vc-integration nil)
+  (add-to-list 'auto-mode-alist '("\\.hamlc\\'" . haml-mode))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(paradox-github-token t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
