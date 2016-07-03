@@ -25,17 +25,17 @@
      ruby
      ruby-on-rails
      javascript
-     racket
-     lua
+     ;racket
+     ;lua
      ;; git
      markdown
      dockerfile
      yaml
      org
-     haskell
-     ycmd
-     purescript
-     typescript
+     ;haskell
+     ;ycmd
+     ;purescript
+     ;typescript
      rust
      dash
      clojure
@@ -189,8 +189,8 @@ before layers configuration."
    web-mode-enable-auto-indentation t
    web-mode-markup-indent-offset 2
    tab-width 2
-   racket-racket-program "/Applications/Racket v6.2/bin/racket"
-   racket-raco-program "/Applications/Racket v6.2/bin/raco"
+   ;racket-racket-program "/Applications/Racket v6.2/bin/racket"
+   ;racket-raco-program "/Applications/Racket v6.2/bin/raco"
    git-magit-status-fullscreen t
    )
   )
