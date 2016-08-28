@@ -9,7 +9,7 @@ export JSCTAGS="/usr/local/lib/jsctags:${NODE_PATH}"
 export NODE_PATH="/usr/local/lib/node"
 export SENCHA_PATH=$HOME/sencha/Cmd/3.1.2.342
 export QT_PATH=$HOME/qt/Qt5.0.0/5.0.0/clang_64/bin
-export PYTHON_SHARE_PATH=/usr/local/share/python
+#export PYTHON_SHARE_PATH=/usr/local/share/python
 export PATH=/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:usr/X11/bin:$PYTHON_SHARE_PATH:$QT_PATH:$NODE_PATH:$SENCHA_PATH:$PATH
 export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="node_modules/.bin":$PATH
@@ -46,6 +46,7 @@ export GOPATH=$HOME/gocode
 export PATH=$PATH:$GOROOT/bin
 
 export PATH=$PATH:$GOPATH/bin
+export RUST_SRC_PATH=$HOME/Projects/rustc-1.10.0/src
 
 
 export PATH=/Applications/Racket\ v6.2/bin/:$PATH

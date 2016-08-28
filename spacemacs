@@ -26,18 +26,19 @@
      ruby-on-rails
      javascript
      ;racket
-     ;lua
+     ;; lua
      ;; git
      markdown
-     dockerfile
+     ;dockerfile
      yaml
      org
-     ;haskell
-     ;ycmd
-     ;purescript
-     ;typescript
+     evernote
+     ;; haskell
+     ;; ycmd
+     ;; purescript
+     ;; typescript
      rust
-     dash
+     ;; dash
      clojure
      (git :variables
           git-magit-status-fullscreen t)
@@ -48,7 +49,7 @@
      ;; syntax-checking
      colors
      version-control
-     themes-megapack
+     ;; themes-megapack
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -88,17 +89,21 @@ before layers configuration."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(monokai
-                         solarized-light
-                         solarized-dark
-                         spacemacs-light
-                         spacemacs-dark
-                         leuven
-                         zenburn)
+                         ;solarized-light
+                         ;solarized-dark
+                         ;spacemacs-light
+                         ;spacemacs-dark
+                         ;leuven
+                         ;zenburn
+                         )
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '(
+                               ;"Source Code Pro"
+                               ;"Fira Mono"
+                               "Hack"
                                :size 12
                                :weight normal
                                :width normal
@@ -214,6 +219,9 @@ layers configuration."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (git-commit projectile rust-mode evil tern anzu f smartparens with-editor dash package-build rake avy company helm helm-core yasnippet magit markdown-mode neotree leuven-theme evil-magit cider queue clojure-mode magit-popup yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe use-package toml-mode toc-org tagedit spacemacs-theme spaceline smooth-scrolling smeargle slim-mode shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv rainbow-mode rainbow-identifiers rainbow-delimiters racer quelpa projectile-rails popwin persp-mode pbcopy paradox page-break-lines osx-trash orgit org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative less-css-mode launchctl json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md geeknote flx-ido fill-column-indicator feature-mode fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eshell-prompt-extras esh-help emmet-mode elisp-slime-nav diff-hl define-word company-web company-tern company-statistics company-racer company-quickhelp coffee-mode clj-refactor clean-aindent-mode cider-eval-sexp-fu chruby bundler buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
  '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
