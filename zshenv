@@ -50,3 +50,5 @@ export RUST_SRC_PATH=$HOME/Projects/rustc-1.10.0/src
 
 
 export PATH=/Applications/Racket\ v6.2/bin/:$PATH
+
+alias lein='rlwrap lein'
