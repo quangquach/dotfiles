@@ -7,7 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-plugins=(git git-flow rails heroku rvm python ruby brew pip django zsh-syntax-highlighting)
+plugins=(git git-flow rails heroku rvm python ruby brew pip django zsh-syntax-highlighting zsh-completions)
 
 # RVM
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
@@ -22,10 +22,6 @@ alias gitk='gitk 2>/dev/null'
 
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
-
-# completion
-autoload -U compinit
-compinit
 
 # automatically enter directories without cd
 setopt auto_cd
@@ -165,3 +161,9 @@ export LANG=en_US.UTF-8
 #source "$HOME/google-cloud-sdk/completion.zsh.inc"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# completion
+autoload -U compinit
+compinit
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

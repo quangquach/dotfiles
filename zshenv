@@ -31,9 +31,6 @@ source $WORKON_HOME/virtualenvwrapper.sh
 
 export COCOS2DX_HOME="$HOME/Projects/cocos2d-x/"
 
-export LUA_PATH="$HOME/.luarocks/share/lua/5.2/?.lua;$HOME/.luarocks/share/lua/5.2/?/init.lua;/usr/local/share/lua/5.2/?.lua;/usr/local/share/lua/5.2/?/init.lua;/usr/local/Cellar/luarocks/2.2.0_1/share/lua/5.2/?.lua"
-export LUA_PATH=$LUA_PATH:"$HOME/Projects/cocos2d-x/cocos/scripting/lua-bindings/script"
-export LUA_CPATH='$HOME/.luarocks/lib/lua/5.2/?.so;/usr/local/lib/lua/5.2/?.so;/usr/local/lib/lua/5.2/loadall.so;./?.so'
 export CARGO_HOME="$HOME/.cargo/bin"
 export PATH=$PATH:$CARGO_HOME
 
@@ -41,7 +38,7 @@ export LIBCLANG_LIBRARY="/usr/local/opt/llvm/lib"
 export LIBCLANG_INCLUDE_DIR="/usr/local/opt/llvm/include"
 
 # go go go
-export GOROOT=/usr/local/Cellar/go/1.2
+#export GOROOT=/usr/local/Cellar/go/1.2
 export GOPATH=$HOME/gocode
 export PATH=$PATH:$GOROOT/bin
 
@@ -50,5 +47,9 @@ export RUST_SRC_PATH=$HOME/Projects/rustc-1.10.0/src
 
 
 export PATH=/Applications/Racket\ v6.2/bin/:$PATH
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+export PATH="$(yarn global bin | grep -o '/.*'):$PATH"
 
 alias lein='rlwrap lein'
+alias scheme='rlwrap scheme'

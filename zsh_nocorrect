@@ -4,13 +4,13 @@ cordova
 phonegap
 ipython
 pip
-ag
 htop
 tig
 git
 vagrant
 rspec
 spec
+ag
 zsh
 docker
 ssh
@@ -19,3 +19,5 @@ zeus
 rails
 irb
 emacs
+heroku
+yarn
