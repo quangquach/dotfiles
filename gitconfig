@@ -1,5 +1,5 @@
 [user]
-	name = Quang Quach
+	name = QQ
 	email = me@quang.be
 	signingkey = 75D5E5A2
 [push]
@@ -31,3 +31,6 @@
 	smudge = git-lfs smudge -- %f
 	required = true
 	clean = git-lfs clean -- %f
+	process = git-lfs filter-process
+[commit]
+	template = /Users/qq/.stCommitMsg
