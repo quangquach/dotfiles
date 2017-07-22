@@ -19,10 +19,10 @@ set shiftwidth=2
 set expandtab
 set smarttab
 set autoindent
-
 "
 set ttyfast " u got a fast terminal
-set ttyscroll=3
+" set ttyscroll=3
+set termguicolors
 set lazyredraw " to avoid scrolling problems
 
 " Numbers
