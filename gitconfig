@@ -1,7 +1,7 @@
 [user]
 	name = QQ
 	email = me@quang.be
-	signingkey = 75D5E5A2
+	signingkey = 2912892EA7E39FEB
 [push]
   default = tracking
 [color]
@@ -34,3 +34,6 @@
 	process = git-lfs filter-process
 [commit]
 	template = /Users/qq/.stCommitMsg
+	gpgsign = true
+[gpg]
+	program = gpg
