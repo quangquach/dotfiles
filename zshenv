@@ -1,35 +1,20 @@
 # RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Customize to your needs...
-export JSCTAGS="/usr/local/lib/jsctags:${NODE_PATH}"
-#export NODE_PATH=$NODE_PATH:/usr/local/lib/node:/usr/local/share/npm/lib/node_modules:/usr/local/share/npm/bin
-export NODE_PATH="/usr/local/lib/node"
-export SENCHA_PATH=$HOME/sencha/Cmd/3.1.2.342
-export QT_PATH=$HOME/qt/Qt5.0.0/5.0.0/clang_64/bin
-#export PYTHON_SHARE_PATH=/usr/local/share/python
-export PATH=/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:usr/X11/bin:$PYTHON_SHARE_PATH:$QT_PATH:$NODE_PATH:$SENCHA_PATH:$PATH
-export PATH="/usr/local/share/npm/bin:$PATH"
+export NODE_PATH=$HOME/.nvm/versions/node/v8.11.3/bin
+export PATH=/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:usr/X11/bin #:$PYTHON_SHARE_PATH:$QT_PATH:$NODE_PATH:$NODE_BIN:$SENCHA_PATH:$PATH
+export PATH="$HOME/.npm-packages/bin:/usr/local/share/npm/bin:$PATH"
 export PATH="node_modules/.bin":$PATH
-export PATH="$HOME/.cabal/bin":"$HOME/Library/Haskell/bin":$PATH
-export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
-
-export ANDROID_HOME=/usr/local/opt/android-sdk
-export ANDROID_SDK_ROOT_LOCAL=/usr/local/opt/android-sdk
-export NDK_ROOT_LOCAL="$HOME/android-ndk-r9"
+#export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Source pip and virtualenvwrapper
-export PYTHONPATH=/usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/bin
-export PATH=$PATH:$PYTHONPATH
+#export PYTHONPATH=/usr/local/Cellar/python@2/2.7.14_1/Frameworks/Python.framework/Versions/2.7/bin
+#export PATH=$PATH:$PYTHONPATH
 #export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/share/python/virtualenv
-#export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-export WORKON_HOME=$HOME/.virtualenvs
-source $WORKON_HOME/virtualenvwrapper.sh
-
-export COCOS2DX_HOME="$HOME/Projects/cocos2d-x/"
+#export VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python@2/bin/python2
+#export WORKON_HOME=$HOME/.virtualenvs
+#source $WORKON_HOME/virtualenvwrapper.sh
 
 export CARGO_HOME="$HOME/.cargo/bin"
 export PATH=$PATH:$CARGO_HOME
@@ -37,19 +22,10 @@ export PATH=$PATH:$CARGO_HOME
 export LIBCLANG_LIBRARY="/usr/local/opt/llvm/lib"
 export LIBCLANG_INCLUDE_DIR="/usr/local/opt/llvm/include"
 
-# go go go
-#export GOROOT=/usr/local/Cellar/go/1.2
-export GOPATH=$HOME/gocode
-export PATH=$PATH:$GOROOT/bin
-
-export PATH=$PATH:$GOPATH/bin
-export RUST_SRC_PATH=$HOME/Projects/rustc-1.10.0/src
-
-
-export PATH=/Applications/Racket\ v6.2/bin/:$PATH
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-export PATH="$(yarn global bin | grep -o '/.*'):$PATH"
+#export PATH="$(yarn global bin | grep -o '/.*'):$PATH"
 
 alias lein='rlwrap lein'
 alias scheme='rlwrap scheme'
+#source $HOME/anaconda3/bin/activate
